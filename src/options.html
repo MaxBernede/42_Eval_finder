@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>42 Eval Finder</title>
+  <style>
+    body { font: 13px/1.4 system-ui, sans-serif; width: 320px; margin: 0; padding: 14px; color: #222; }
+    h1 { font-size: 15px; margin: 0 0 6px; color: #00a0a2; }
+    .legend span { margin-right: 12px; }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    label { display: block; margin: 10px 0 3px; font-weight: 600; }
+    small { color: #666; font-weight: normal; }
+    input { width: 100%; box-sizing: border-box; padding: 6px; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+    .row { display: flex; gap: 8px; margin-top: 14px; }
+    button { flex: 1; padding: 7px; border: 0; border-radius: 6px; cursor: pointer; font: inherit; }
+    #save { background: #00babc; color: #fff; }
+    #clear { background: #eee; }
+    #msg { margin-top: 8px; min-height: 1em; color: #1a7f3c; }
+    a { color: #0077aa; }
+  </style>
+</head>
+<body>
+  <h1>42 Eval Finder</h1>
+  <div class="legend">
+    <span><i style="background:#f2c200"></i>Advanced</span>
+    <span><i style="background:#9b4dff"></i>Rank 6</span>
+  </div>
+
+  <label>API UID <small>(<a href="https://profile.intra.42.fr/oauth/applications/new" target="_blank">create an app</a>)</small></label>
+  <input id="uid" autocomplete="off" placeholder="u-s4t2ud-…">
+
+  <label>API SECRET <small>(rotates monthly, paste the new one here)</small></label>
+  <input id="secret" type="password" autocomplete="off" placeholder="s-s4t2ud-…">
+
+  <label>Your 42 login <small>(finds your campus, hides you from the list)</small></label>
+  <input id="myLogin" placeholder="e.g. jdoe">
+
+  <label>Campus ID <small>(auto-detected if empty)</small></label>
+  <input id="campusId" placeholder="detected from your login">
+
+  <p><small>The list refreshes automatically every 24 h.</small></p>
+
+  <div class="row">
+    <button id="save">Save</button>
+    <button id="clear">Clear cache</button>
+  </div>
+  <div id="msg"></div>
+  <script src="options.js"></script>
+</body>
+</html>

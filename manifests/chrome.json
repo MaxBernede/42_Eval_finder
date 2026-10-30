@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "42 Eval Finder",
+  "version": "2.1.0",
+  "description": "On the cluster map: yellow = advanced, purple = rank 6 (ft_transcendence).",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.intra.42.fr/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://meta.intra.42.fr/*", "https://profile.intra.42.fr/*", "https://*.codam.nl/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "action": { "default_popup": "options.html", "default_title": "42 Eval Finder" }
+}

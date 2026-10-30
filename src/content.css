@@ -1,0 +1,22 @@
+#ef-panel {
+  position: fixed; right: 16px; bottom: 16px; z-index: 2147483647;
+  width: 300px; max-height: 60vh; display: flex; flex-direction: column;
+  background: #1d1f24; color: #eee; border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+  font: 12px/1.4 system-ui, sans-serif;
+}
+#ef-panel .ef-head { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border-bottom: 1px solid #333; }
+#ef-panel .ef-body { padding: 8px 10px; overflow: auto; }
+#ef-panel.ef-min .ef-body { display: none; }
+#ef-panel .ef-btn { background: #2d3038; color: #eee; border: 0; border-radius: 6px; padding: 4px 8px; cursor: pointer; font: inherit; }
+#ef-panel .ef-btn:hover { background: #3a3e48; }
+#ef-panel .ef-legend { display: flex; gap: 12px; margin-bottom: 6px; }
+#ef-panel i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+#ef-panel .ef-status { color: #aaa; margin-bottom: 6px; }
+#ef-panel .ef-actions { display: flex; gap: 6px; margin-bottom: 6px; }
+#ef-panel .ef-list { list-style: none; margin: 0; padding: 0; }
+#ef-panel .ef-list li { padding: 4px 0; border-top: 1px solid #2a2c32; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+#ef-panel .ef-list a { color: #7fd4ff; font-weight: 600; text-decoration: none; }
+#ef-panel .ef-host { color: #999; }
+#ef-panel .ef-meta { color: #bbb; margin-left: auto; }
+#ef-panel .ef-empty { color: #999; }
