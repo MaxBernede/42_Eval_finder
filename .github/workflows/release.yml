@@ -1,0 +1,31 @@
+name: Release
+
+# Runs when you push a tag like v2.2.0
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build zips
+        run: |
+          chmod +x build.sh
+          ./build.sh "${GITHUB_REF_NAME}"
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.zip \
+            --title "$GITHUB_REF_NAME" \
+            --notes "Download the zip for your browser, then follow the install steps in the README.
+
+          - **Chrome / Brave**: 42-eval-finder-chrome.zip
+          - **Firefox**: 42-eval-finder-firefox.zip"
